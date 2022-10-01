@@ -20,7 +20,7 @@ int main()
                 window.close();
         }
 
-        game.Update(deltaTime);
+        game.Update(window,deltaTime);
 
         window.clear();
         game.Draw(window);
