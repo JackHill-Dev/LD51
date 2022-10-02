@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "Button.h"
-
+#include "Player.h"
 struct Cursor
 {
 	Cursor()
@@ -36,5 +36,5 @@ private:
 	void HandleCollisions();
 private:
 	Cursor cursor;
-
+	Player m_Player;
 };
