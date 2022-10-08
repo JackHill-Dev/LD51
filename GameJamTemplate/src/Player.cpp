@@ -10,33 +10,41 @@ Player::Player()
 	m_Sprite.setOrigin(m_Sprite.getLocalBounds().width / 2, m_Sprite.getLocalBounds().height / 2);
 	m_Sprite.setPosition(640, 320);
 
+	InitAnims();
+}
+
+Player::~Player()
+{
+	delete m_Texture;
+	m_Texture = nullptr;
+}
+
+void Player::InitAnims()
+{
+
 	m_Anims.reserve(AnimState::Count);
 	// Aniamtion(starting frame x, y, size, no. frames, frame time)
 	// Idle
 	m_Anims.push_back(Animation(0, 640, 64, 64, 1, 0.1f));
 	// Walk Right
-	m_Anims.push_back( Animation(0, 704, 64, 64, 9, 0.1f));
+	m_Anims.push_back(Animation(0, 704, 64, 64, 9, 0.1f));
 	// Walk Left
-	m_Anims.push_back( Animation(0, 576, 64, 64, 9, 0.1f));
+	m_Anims.push_back(Animation(0, 576, 64, 64, 9, 0.1f));
 	// Walk Up
-	m_Anims.push_back( Animation(0, 512, 64, 64, 9, 0.1f));
+	m_Anims.push_back(Animation(0, 512, 64, 64, 9, 0.1f));
 	// Walk Down
-	m_Anims.push_back( Animation(0, 640, 64, 64, 9, 0.1f));
-	// Shoot Right
-	m_Anims.push_back( Animation(0, 19 * 64 , 64, 64, 13, 0.2f));
+	m_Anims.push_back(Animation(0, 640, 64, 64, 9, 0.1f));
+	// SpellCast Right
+	m_Anims.push_back(Animation(0, 64 * 3, 64, 64, 7, 0.2f));
 }
 
-Player::~Player()
-{
-	m_Texture = nullptr;
-	delete m_Texture;
-}
 
 void Player::Update(float& dt)
 {
 
 
 	UpdateMovement(dt);
+	Shoot();
 	UpdateAnimations(dt);
 	
 
@@ -73,6 +81,17 @@ void Player::UpdateMovement(float& dt)
 	}
 
 
+}
+
+void Player::Shoot()
+{
+	int direction = 0;
+
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+	{
+		m_CurrentAnimState = AnimState::SpellCastRight;
+	}
 }
 
 void Player::UpdateAnimations(float& dt)

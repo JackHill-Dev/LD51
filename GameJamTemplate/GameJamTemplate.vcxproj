@@ -140,12 +140,14 @@
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\Button.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Spell.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Animation.h" />
     <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\Button.h" />
+    <ClInclude Include="src\Spell.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

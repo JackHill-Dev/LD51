@@ -8,10 +8,12 @@ class Player
 public:
 	Player();
 	~Player();
+	void InitAnims();
 	sf::Sprite& GetSprite() { return m_Sprite; }
 	const sf::FloatRect& GetGlobalBounds() const { return m_Sprite.getGlobalBounds(); }
 	void Update(float& dt);
 	void UpdateMovement(float& dt);
+	void Shoot();
 	void UpdateAnimations(float& dt);
 	void Decelerate(float& dt);
 	enum AnimState
@@ -21,6 +23,10 @@ public:
 		WalkLeft,
 		WalkUp,
 		WalkDown,
+		SpellCastRight,
+		SpellCastLeft,
+		SpellCastUp,
+		SpellCastDown,
 		Count
 	};
 private:

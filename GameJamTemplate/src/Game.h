@@ -16,8 +16,9 @@ struct Cursor
 
 	~Cursor()
 	{
-		m_Texture = nullptr;
 		delete m_Texture;
+		m_Texture = nullptr;
+		
 	}
 	void SetPos(sf::Vector2f& pos) { m_Sprite.setPosition(pos); }
 	sf::Sprite& GetSprite() { return m_Sprite; }
