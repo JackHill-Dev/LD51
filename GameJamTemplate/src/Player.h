@@ -12,9 +12,11 @@ public:
 	const sf::FloatRect& GetGlobalBounds() const { return m_Sprite.getGlobalBounds(); }
 	void Update(float& dt);
 	void UpdateMovement(float& dt);
-
+	void UpdateAnimations(float& dt);
+	void Decelerate(float& dt);
 	enum AnimState
 	{
+		Idle,
 		WalkRight,
 		WalkLeft,
 		WalkUp,
@@ -22,7 +24,9 @@ public:
 		Count
 	};
 private:
-	float speed = 1.f;
+	float speed = 1400;
+	float deceleration = 1000;
+	float m_MaxVelocity = 140;
 	sf::Vector2f m_Velocity;
 	sf::Texture* m_Texture;
 	sf::Sprite m_Sprite;
