@@ -3,7 +3,7 @@
 Player::Player()
 {
 	sf::IntRect rect({ 0, 128 }, { 64,64 });
-	m_Texture = new sf::Texture;
+	m_Texture = std::make_unique<sf::Texture>();
 	m_Texture->loadFromFile("Assets/Player.png");
 	m_Sprite.setTexture(*m_Texture);
 	m_Sprite.setTextureRect(rect);
@@ -15,8 +15,7 @@ Player::Player()
 
 Player::~Player()
 {
-	delete m_Texture;
-	m_Texture = nullptr;
+
 }
 
 void Player::InitAnims()

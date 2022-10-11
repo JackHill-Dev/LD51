@@ -3,6 +3,7 @@
 #include <string>
 #include "Button.h"
 #include "Player.h"
+#include "Spell.h"
 struct Cursor
 {
 	Cursor()
@@ -38,4 +39,5 @@ private:
 private:
 	Cursor cursor;
 	Player m_Player;
+	Spell spell;
 };

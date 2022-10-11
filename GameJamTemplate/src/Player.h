@@ -2,6 +2,7 @@
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Rect.hpp>
+#include <memory>
 #include "Animation.h"
 class Player
 {
@@ -34,7 +35,7 @@ private:
 	float deceleration = 1000;
 	float m_MaxVelocity = 140;
 	sf::Vector2f m_Velocity;
-	sf::Texture* m_Texture;
+	std::unique_ptr<sf::Texture> m_Texture;
 	sf::Sprite m_Sprite;
 	Animation m_WalkingAnim;
 	AnimState m_CurrentAnimState = AnimState::WalkRight;
