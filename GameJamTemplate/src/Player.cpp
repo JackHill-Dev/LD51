@@ -50,7 +50,10 @@ void Player::Update(float& dt)
 	Decelerate(dt);
 	m_Sprite.move(m_Velocity * dt);
 }
-
+void Player::Draw(sf::RenderWindow& window)
+{
+	window.draw(m_Sprite);
+}
 void Player::UpdateMovement(float& dt)
 {
 

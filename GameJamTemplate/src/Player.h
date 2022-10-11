@@ -2,6 +2,7 @@
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 #include <memory>
 #include "Animation.h"
 class Player
@@ -13,6 +14,7 @@ public:
 	sf::Sprite& GetSprite() { return m_Sprite; }
 	const sf::FloatRect& GetGlobalBounds() const { return m_Sprite.getGlobalBounds(); }
 	void Update(float& dt);
+	void Draw(sf::RenderWindow& window);
 	void UpdateMovement(float& dt);
 	void Shoot();
 	void UpdateAnimations(float& dt);

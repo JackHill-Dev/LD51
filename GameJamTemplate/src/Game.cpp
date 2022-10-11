@@ -19,7 +19,7 @@ void Game::Update(sf::RenderWindow& window, float& dt)
 void Game::Draw(sf::RenderWindow& RenderWindow)
 {
 	RenderWindow.draw(cursor.GetSprite());
-	RenderWindow.draw(m_Player.GetSprite());
+	m_Player.Draw(RenderWindow);
 	spell.Draw(RenderWindow);
 }
 
